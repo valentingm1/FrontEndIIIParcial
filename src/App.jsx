@@ -4,12 +4,19 @@ import Form from "./Form";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [titulo, setTitulo] = useState("");
+  const [contenido, setContenido] = useState("");
+  const [footer, setFooter] = useState("");
 
   return (
     <div className="App">
-      <Form/>
-      <Card />
+      <div className="app_title">Personalizá tu propia tarjeta</div>
+      <Form
+        setTitulo={setTitulo}
+        setContenido={setContenido}
+        setFooter={setFooter}
+      />
+      <Card titulo={titulo} contenido={contenido} footer={footer} />
     </div>
   );
 }
